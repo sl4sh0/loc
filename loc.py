@@ -1,6 +1,7 @@
 import os
 from pathlib import *
 import sys
+from collections import Counter
 
 detect_language = lambda file: PurePath(file).suffix # Returns language file extension
 
@@ -26,6 +27,7 @@ def count_loc(file):
 
 
 def count_lines_for_ext(dir):
+    counts = Counter()
 
     if "-e" in sys.argv:
         indx = (sys.argv.index("-e"))
@@ -40,10 +42,17 @@ def count_lines_for_ext(dir):
                     lines_with_code = count_loc(file)
                     total = count_loc(file) + blank_lines
 
+                    counts[ext] += total
+
                     reldir_of_thing = "." + file.replace(str(dir), "")
 
                     print("{:>10} |{:>10} |{:>10} | {:<20}".format(
                         lines_with_code, blank_lines, total, reldir_of_thing))
+
+    print("{:>11}EVERYTHING TOTAL".format(""))
+    print("{:>9}{:->9}|{:->9}".format("", "", ""))
+    for i in counts:
+        print("{:>15}{:>11} TOTAL".format(i, counts[i]))
 
 
 print("{:>10} |{:>10} |{:>10} | {:<20}".format(
