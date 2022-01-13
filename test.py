@@ -1,6 +1,7 @@
 import os
 from pathlib import *
 import sys
+import argparse
 
 detect_language = lambda file: PurePath(file).suffix # Returns language file extension
 
@@ -52,4 +53,13 @@ def countlines(dir: Path, lines=0,begin_start=None):
 
 print("{:>10} |{:>10} |{:>10} | {:<20}".format("FULL LINES","BLANK", "TOTAL", "FILE"))
 print("{:->11}|{:->11}|{:->20}".format("", "", ""))
-countlines(Path("D:\\test"))
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument(
+    "directory", help="Name of folder or directory u wish to scan")
+# parser.add_argument(
+#     "-e", nargs='+', help="Extensions u wish to scan for", required=False)
+
+args = parser.parse_args()
+countlines(Path(args.directory))
