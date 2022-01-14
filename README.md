@@ -3,8 +3,6 @@
   <p>LOC (lines of code) is very simple counting script made in python.</p>
 </div>
 
-<br>
-
 <div>
   <h2>How can I run this?</h2>
   <p>It's very simple just run start.py and pass in parameters.</p>
