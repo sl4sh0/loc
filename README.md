@@ -20,3 +20,15 @@ options:
   -h, --help    show this help message and exit
   -e E [E ...]  Extensions u wish to scan for
 ```
+<p>Eg</p>
+
+```
+D:\loc>python start.py D:\loc  -e .py
+FULL LINES |     BLANK |     TOTAL | FILE
+-----------|-----------|--------------------
+        44 |        17 |        61 | .\loc.py
+        11 |         6 |        17 | .\start.py
+           EVERYTHING TOTAL
+         ---------|---------
+            .py         78 LINES TOTAL
+```
