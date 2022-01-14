@@ -41,18 +41,19 @@ def count_lines_for_ext(dir):
                     blank_lines = count_blank_lines(file)
                     lines_with_code = count_loc(file)
                     total = count_loc(file) + blank_lines
-
+                    
                     counts[ext] += total
 
                     reldir_of_thing = "." + file.replace(str(dir), "")
 
                     print("{:>10} |{:>10} |{:>10} | {:<20}".format(
                         lines_with_code, blank_lines, total, reldir_of_thing))
+                        
 
     print("{:>11}EVERYTHING TOTAL".format(""))
     print("{:>9}{:->9}|{:->9}".format("", "", ""))
     for i in counts:
-        print("{:>15}{:>11} TOTAL".format(i, counts[i]))
+        print("{:>15}{:>11} LINES TOTAL".format(i, counts[i]))
 
 
 print("{:>10} |{:>10} |{:>10} | {:<20}".format(
