@@ -3,10 +3,12 @@
   <p>LOC (lines of code) is very simple counting script made in python.</p>
 </div>
 
-<div>
-  <h2>How can I run this?</h2>
-  <p>It's very simple just run start.py and pass in parameters.</p>
-</div>
+
+How can i run this?
+<br>
+
+
+It's very simple just run [`start.py`](https://github.com/sl4sh0/loc/blob/main/start.py)  and pass in parameters.
 
 ```
 D:\loc>python start.py -h
